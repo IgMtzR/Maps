@@ -1,0 +1,37 @@
+<div class="container-fluid">
+    <div class="row mt-5">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <div>
+                <!-- <div class="form-group">
+                    <input placeholder="buscar localización" autocorrect="off" autocapitalize="off" spellcheck="off"
+                        type="text" class="form-control" #search [formControl]="searchControl">
+                </div> -->
+                <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom" (mapClick)="click($event)">
+                    <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
+                </agm-map>
+            </div>
+            <div>
+                <div class="form-group">
+                    <button class="btn btn-sm btn-copy" (click)="copyInputMessage(cordsinput)"
+                        value="click to copy">Copy</button>
+                    <label for="">Cordenadas: </label>
+                    <input class="form-control" type="text" name="cords" id="cords" [(ngModel)]="cords"
+                        readonly="readonly" #cordsinput>
+                </div>
+            </div>
+            <div>
+                <div class="form-group">
+                    <button class="btn btn-sm btn-copy" (click)="copyInputMessage(urlinput)"
+                        value="click to copy">Copy</button>
+                    <button class="btn btn-sm btn-success" (click)="Go()"
+                        value="click to copy">Go</button>
+                    <label for="">Link: </label>
+                    <input class="form-control" type="text" name="url" id="url" [(ngModel)]="url"
+                        readonly="readonly" #urlinput>
+                </div>
+            </div>
+        </div>
+        <div class="col-2"></div>
+    </div>
+</div>
